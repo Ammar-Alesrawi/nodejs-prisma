@@ -1,19 +1,20 @@
 -- CreateTable
 CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
-    "email" TEXT NOT NULL,
-    "name" TEXT,
+    "id" INT8 NOT NULL DEFAULT unique_rowid(),
+    "email" STRING NOT NULL,
+    "name" STRING,
+    "bio" STRING,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Post" (
-    "id" SERIAL NOT NULL,
-    "title" TEXT NOT NULL,
-    "content" TEXT,
-    "published" BOOLEAN NOT NULL DEFAULT false,
-    "authorId" INTEGER NOT NULL,
+    "id" INT8 NOT NULL DEFAULT unique_rowid(),
+    "title" STRING NOT NULL,
+    "content" STRING,
+    "published" BOOL NOT NULL DEFAULT false,
+    "authorId" INT8 NOT NULL,
 
     CONSTRAINT "Post_pkey" PRIMARY KEY ("id")
 );

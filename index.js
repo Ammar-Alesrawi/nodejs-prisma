@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const routes = require('./routes/api/index');
+const prisma = require('./prisma/prisma');
 const app = express();
 
 
